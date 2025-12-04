@@ -1,0 +1,27 @@
+# la clase Animal es la base
+# luego perro y gato que heredan de ella y cambian el método sonido()
+
+class Animal:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    def sonido(self):
+        return "Este animal es re lindoooo."
+
+
+class Perro(Animal):  # perro hereda de Animal
+    def sonido(self):
+        return "Guau guau >ω< "
+
+
+class Gato(Animal):   # gato también hereda de Animal
+    def sonido(self):
+        return "Miauuuuu!"
+
+
+# probar
+perro = Perro("Perrito")
+gato = Gato("Ottito")
+
+print(perro.nombre, "dice:", perro.sonido())
+print(gato.nombre, "dice:", gato.sonido())
