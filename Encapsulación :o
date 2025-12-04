@@ -1,0 +1,32 @@
+# aqui hare que los atributos sean privados para que no puedan cambiarse directamente
+# solo  se modifican con getters y setters
+
+class Persona:
+    def __init__(self, nombre, edad):
+        self.__nombre = nombre   
+# ambos privado
+        self.__edad = edad       
+
+    def get_nombre(self):
+        # Devuelve el nombre
+        return self.__nombre
+
+    def set_nombre(self, nuevo_nombre):
+        # Cambia el nombre
+        self.__nombre = nuevo_nombre
+
+    def get_edad(self):
+        # Devuelve la edad
+        return self.__edad
+
+    def set_edad(self, nueva_edad):
+        if nueva_edad > 0:
+            self.__edad = nueva_edad
+        else:
+            print("Edad inválida")
+
+# Probando mi clase:
+p = Persona("Rashta", 29)
+print(p.get_nombre())
+p.set_edad(20)
+print(p.get_edad())
