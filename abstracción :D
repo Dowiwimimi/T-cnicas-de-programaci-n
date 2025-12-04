@@ -1,0 +1,35 @@
+# básicamente dejare una clase figura que solo define lo importante 
+# pero no dice cómo se calcula el área, por lo que de esto se encargaran las clases hijas
+
+from abc import ABC, abstractmethod
+
+class Figura(ABC):
+    # solo define lo que todas  las figuras deben tener
+    
+    @abstractmethod
+    def area(self):
+        pass
+
+
+class Circulo(Figura):
+    def __init__(self, radio):
+        self.radio = radio
+
+    def area(self):
+        return 3.1416 * (self.radio ** 2)
+
+
+class Cuadrado(Figura):
+    def __init__(self, lado):
+        self.lado = lado
+
+    def area(self):
+        return self.lado * self.lado
+
+
+# prueba de  mis clases:
+cir = Circulo(4)
+cua = Cuadrado(5)
+
+print("Área del círculo:", cir.area())
+print("Área del cuadrado:", cua.area())
