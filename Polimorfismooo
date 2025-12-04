@@ -1,0 +1,35 @@
+class Figura:
+    def area(self):
+        pass
+
+class Triangulo(Figura):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def area(self):
+        # Fórmula del triángulo
+        return (self.base * self.altura) / 2
+
+
+class Rectangulo(Figura):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def area(self):
+        # Área del rectángulo
+        return self.base * self.altura
+
+
+def mostrar_area(figura):
+    # esta función demuestra el polimorfismo:
+    print("Área:", figura.area())
+    # no importa si le paso un triángulo o un rectángulo, mientras tenga un método area(), funciona igualmente
+
+#probar
+t = Triangulo(10, 5)
+r = Rectangulo(8, 4)
+
+mostrar_area(t)
+mostrar_area(r)
